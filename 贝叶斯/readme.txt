@@ -1,0 +1,13 @@
+（1）CountClassFiles.java:是一个MapReduce程序，实现分别统计CHINA和USA类中分别有多少个文件，该MR的输入输出文件目录如下：
+hdfs://Master:9000/user/hadoop/in/NBCorpus/Country/CHINA
+hdfs://Master:9000/user/hadoop/in/NBCorpus/Country/USA
+hdfs://Master:9000/user/hadoop/out/CountClassFilesOut
+（2）CountClassWords.java:是一个MapReduce程序，实现分别统计每个单词分别在CHINA和USA类别中出现的频数，该MR的输入输出文件目录如下：
+hdfs://Master:9000/user/hadoop/in/NBCorpus/Country/CHINA
+hdfs://Master:9000/user/hadoop/in/NBCorpus/Country/USA
+hdfs://Master:9000/user/hadoop/out/CountClassWordsOut
+（3）ProcessData.java:是一个java程序，对以上两个MR程序的输出结果进行计算，结果为CHINA和USA类别的先验概率，每个单词在每个类别中的似然概率
+（4）TestFilesClass.java:是一个MapReduce程序，测试给定文档的类别，最终输出结果为以上训练模型判别文件的结果，该MR的输入输出文件目录如下：
+hdfs://Master:9000/user/hadoop/in/bayesForcast
+hdfs://Master:9000/user/hadoop/out/anotherBayesOut
+（5）my.java：文件批量重命名的java程序，方便观察最后输出结果，可以不添加到项目中
